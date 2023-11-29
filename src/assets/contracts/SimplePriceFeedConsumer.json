@@ -1,0 +1,196 @@
+{
+  "address": "0x780AdF749BB8888c9FF7c5660DD50eA69080e753",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract AggregatorV3Interface",
+          "name": "priceFeed_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_offChain",
+          "type": "uint256"
+        }
+      ],
+      "name": "doSomethingWithPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "latestSavedPrice",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "priceId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "prices",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "offChain",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "onChain",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x2c110dcef16b43c496490f86f669f49d1d0f99a73494ca1f397e721f102c803f",
+  "receipt": {
+    "to": null,
+    "from": "0x903918bB1903714E0518Ea2122aCeBfa27f11b6F",
+    "contractAddress": "0xf8DF9866e9d08B9A8E6860FF5f47176c1E9942aF",
+    "transactionIndex": 0,
+    "gasUsed": "205530",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x4743226ef41c4f1b34d51c333229ada02d32ed49c95535fe1fc05d92dccb101b",
+    "transactionHash": "0x2c110dcef16b43c496490f86f669f49d1d0f99a73494ca1f397e721f102c803f",
+    "logs": [],
+    "blockNumber": 1499,
+    "cumulativeGasUsed": "205530",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x64b877cAe5aE66b0070f057De5810e31de499216"
+  ],
+  "numDeployments": 2,
+  "solcInputHash": "aebcbafe9c9ecfb83eed5e1b166887dc",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract AggregatorV3Interface\",\"name\":\"priceFeed_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_offChain\",\"type\":\"uint256\"}],\"name\":\"doSomethingWithPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"latestSavedPrice\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"priceId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"prices\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"offChain\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"onChain\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/demos/SimplePriceFeedConsumer.sol\":\"SimplePriceFeedConsumer\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":999999},\"remappings\":[]},\"sources\":{\"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ninterface AggregatorV3Interface {\\n  function decimals() external view returns (uint8);\\n\\n  function description() external view returns (string memory);\\n\\n  function version() external view returns (uint256);\\n\\n  function getRoundData(uint80 _roundId)\\n    external\\n    view\\n    returns (\\n      uint80 roundId,\\n      int256 answer,\\n      uint256 startedAt,\\n      uint256 updatedAt,\\n      uint80 answeredInRound\\n    );\\n\\n  function latestRoundData()\\n    external\\n    view\\n    returns (\\n      uint80 roundId,\\n      int256 answer,\\n      uint256 startedAt,\\n      uint256 updatedAt,\\n      uint80 answeredInRound\\n    );\\n}\\n\",\"keccak256\":\"0x6e6e4b0835904509406b070ee173b5bc8f677c19421b76be38aea3b1b3d30846\",\"license\":\"MIT\"},\"contracts/demos/SimplePriceFeedConsumer.sol\":{\"content\":\"// SPDX-License-Identifier: BUSL-1.1\\n\\npragma solidity ^0.8.4;\\n\\nimport {AggregatorV3Interface} from \\\"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol\\\";\\n\\nstruct Prices {\\n  uint256 offChain;\\n  uint256 onChain;\\n}\\n\\ncontract SimplePriceFeedConsumer {\\n  AggregatorV3Interface private priceFeed;\\n  int256 public latestSavedPrice;\\n  uint256 public priceId;\\n  mapping(uint256 => Prices ) public prices;\\n\\n  constructor(AggregatorV3Interface priceFeed_) {\\n    priceFeed = priceFeed_;\\n  }\\n\\n  function doSomethingWithPrice(uint256 _offChain) public {\\n    (, int256 price, , , ) = priceFeed.latestRoundData();\\n\\n    prices[priceId] = Prices(_offChain,uint(price));\\n    // We can do whatever logic with the price\\n    // In this example, we just save it in a storage variable\\n    latestSavedPrice = price;\\n  }\\n}\\n\",\"keccak256\":\"0x1169150623676b9fd0dbb5b25310cfa4b26d11d01f778562033955d7f25aee36\",\"license\":\"BUSL-1.1\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516102e33803806102e383398101604081905261002f91610054565b600080546001600160a01b0319166001600160a01b0392909216919091179055610084565b60006020828403121561006657600080fd5b81516001600160a01b038116811461007d57600080fd5b9392505050565b610250806100936000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806331189334146100515780634633fae51461006d578063aba946f314610076578063bc31c1c11461008b575b600080fd5b61005a60025481565b6040519081526020015b60405180910390f35b61005a60015481565b610089610084366004610192565b6100c7565b005b6100b2610099366004610192565b6003602052600090815260409020805460019091015482565b60408051928352602083019190915201610064565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa158015610135573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061015991906101ca565b50506040805180820182529586526020808701848152600254600090815260039092529190209551865551600195860155509092555050565b6000602082840312156101a457600080fd5b5035919050565b805169ffffffffffffffffffff811681146101c557600080fd5b919050565b600080600080600060a086880312156101e257600080fd5b6101eb866101ab565b945060208601519350604086015192506060860151915061020e608087016101ab565b9050929550929590935056fea2646970667358221220ef34c7649f5fd4d0adec820141a99654ae34eb1cd6acfae936fe4f3e55d80c3b64736f6c63430008140033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806331189334146100515780634633fae51461006d578063aba946f314610076578063bc31c1c11461008b575b600080fd5b61005a60025481565b6040519081526020015b60405180910390f35b61005a60015481565b610089610084366004610192565b6100c7565b005b6100b2610099366004610192565b6003602052600090815260409020805460019091015482565b60408051928352602083019190915201610064565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663feaf968c6040518163ffffffff1660e01b815260040160a060405180830381865afa158015610135573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061015991906101ca565b50506040805180820182529586526020808701848152600254600090815260039092529190209551865551600195860155509092555050565b6000602082840312156101a457600080fd5b5035919050565b805169ffffffffffffffffffff811681146101c557600080fd5b919050565b600080600080600060a086880312156101e257600080fd5b6101eb866101ab565b945060208601519350604086015192506060860151915061020e608087016101ab565b9050929550929590935056fea2646970667358221220ef34c7649f5fd4d0adec820141a99654ae34eb1cd6acfae936fe4f3e55d80c3b64736f6c63430008140033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 57,
+        "contract": "contracts/demos/SimplePriceFeedConsumer.sol:SimplePriceFeedConsumer",
+        "label": "priceFeed",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(AggregatorV3Interface)45"
+      },
+      {
+        "astId": 59,
+        "contract": "contracts/demos/SimplePriceFeedConsumer.sol:SimplePriceFeedConsumer",
+        "label": "latestSavedPrice",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_int256"
+      },
+      {
+        "astId": 61,
+        "contract": "contracts/demos/SimplePriceFeedConsumer.sol:SimplePriceFeedConsumer",
+        "label": "priceId",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 66,
+        "contract": "contracts/demos/SimplePriceFeedConsumer.sol:SimplePriceFeedConsumer",
+        "label": "prices",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_uint256,t_struct(Prices)54_storage)"
+      }
+    ],
+    "types": {
+      "t_contract(AggregatorV3Interface)45": {
+        "encoding": "inplace",
+        "label": "contract AggregatorV3Interface",
+        "numberOfBytes": "20"
+      },
+      "t_int256": {
+        "encoding": "inplace",
+        "label": "int256",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_uint256,t_struct(Prices)54_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct Prices)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Prices)54_storage"
+      },
+      "t_struct(Prices)54_storage": {
+        "encoding": "inplace",
+        "label": "struct Prices",
+        "members": [
+          {
+            "astId": 51,
+            "contract": "contracts/demos/SimplePriceFeedConsumer.sol:SimplePriceFeedConsumer",
+            "label": "offChain",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 53,
+            "contract": "contracts/demos/SimplePriceFeedConsumer.sol:SimplePriceFeedConsumer",
+            "label": "onChain",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
