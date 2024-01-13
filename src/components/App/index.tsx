@@ -154,11 +154,12 @@ const App = () => {
       return;
     }
 
-    const numbers = interval(1000);
+    const numbers = interval(2000);
 
     const takeFourNumbers = numbers.pipe(takeUntil(destroyFetchTask));
 
     takeFourNumbers.subscribe(async (x) => {
+      console.log(x)
       try {
         const dataPackagesResponse = await sdk.requestDataPackages({
           dataServiceId: "redstone-main-demo",
@@ -166,8 +167,9 @@ const App = () => {
           dataFeeds: ["XAU"],
           urls: ["https://oracle-gateway-1.b.redstone.finance"],
         });
-
+    
         const { dataPackage } = dataPackagesResponse["XAU"]![0];
+        console.log(dataPackage)
 
         const parsedPrice = parsePrice(dataPackage.dataPoints[0].value);
 
